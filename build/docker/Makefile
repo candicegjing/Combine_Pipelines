@@ -3,6 +3,7 @@ CUR_DATE=`date +'%m_%d_%Y'`
 all: build_docker_image login_to_dockerhub push_to_dockerhub
 
 build_docker_image:
+<<<<<<< HEAD
 	docker build --no-cache -t knowengdev/general_clustering_pipeline:$(CUR_DATE) .
 
 login_to_dockerhub:
@@ -10,3 +11,12 @@ login_to_dockerhub:
 
 push_to_dockerhub:
 	docker push knowengdev/general_clustering_pipeline:$(CUR_DATE)
+=======
+	docker build --no-cache -t knowengdev/signature_analysis_pipeline:$(CUR_DATE) .
+
+login_to_dockerhub:
+	docker login --username=$(username) --password=$(password)
+
+push_to_dockerhub:
+	docker push knowengdev/signature_analysis_pipeline:$(CUR_DATE)
+>>>>>>> Signature_Analysis_Pipeline/master

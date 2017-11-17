@@ -1,0 +1,16 @@
+# --------------------------------------------------------------------
+# - Analysis Method: similarity, cc_similarity, net_similarity, cc_net_similarity
+# --------------------------------------------------------------------
+method:                      similarity                 
+
+# --------------------------------------------------------------------
+# - Similarity Measure: cosine, spearman
+# --------------------------------------------------------------------
+similarity_measure:          spearman
+spreadsheet_name_full_path: ../data/spreadsheets/Jinfeng_spreadsheet_sample.csv
+signature_name_full_path:   ../data/spreadsheets/Jinfeng_spreadsheet_signature.csv
+# -----------------------------------------------------------------------
+# directories for storing run results and temporary data
+# -----------------------------------------------------------------------
+results_directory:           ./run_dir/results
+tmp_directory:               ./run_dir/tmp

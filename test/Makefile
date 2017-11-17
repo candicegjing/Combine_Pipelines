@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 SCRIPT = ../src/general_clustering.py
+=======
+SCRIPT = ../src/gene_signature.py
+>>>>>>> Signature_Analysis_Pipeline/master
 RUN_DIR = ./run_dir
 RUN_FILES = ../data/run_files
 RESULTS_DIR = $(RUN_DIR)/results
@@ -25,6 +29,7 @@ clean_dir_recursively:
 # ----------------------------------------------------------------
 # Large Benchmarks RUN Section                                   -
 # ----------------------------------------------------------------
+<<<<<<< HEAD
 run_all_binary:\
 run_kmeans_binary\
 run_hclust_binary\
@@ -84,6 +89,63 @@ run_cc_link_hclust_continuous:
 
 run_kmeans_binary_eval:
 	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_13_kmeans_binary_evaluation.yml
+=======
+run_all_bench: run_spearman run_net_spearman run_cc_spearman run_cc_net_spearman  run_cos      run_net_cos      run_cc_cos      run_cc_net_cos
+
+run_spearman:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_1_GS_spearman.yml
+
+run_net_spearman:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_2_GS_net_spearman.yml
+
+run_cc_spearman:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_3_GS_cc_spearman.yml
+
+run_cc_net_spearman:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_4_GS_cc_net_spearman.yml
+
+run_cos:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_1_GS_cos.yml
+
+run_net_cos:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_2_GS_net_cos.yml
+
+run_cc_cos:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_3_GS_cc_cos.yml
+
+run_cc_net_cos:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_4_GS_cc_net_cos.yml
+
+# ----------------------------------------------------------------
+# Small Benchmarks RUN Section                                   -
+# ----------------------------------------------------------------
+run_all_tests: run_cos_test run_net_cos_test  run_cc_cos_test  run_cc_net_cos_test \
+		run_spearman_test run_net_spearman_test run_cc_spearman_test  run_cc_net_spearman_test
+
+run_cos_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_1_GS_cos.yml
+
+run_net_cos_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_2_GS_net_cos.yml
+
+run_cc_cos_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_3_GS_cc_cos.yml
+
+run_cc_net_cos_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_4_GS_cc_net_cos.yml
+
+run_spearman_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_1_GS_spearman.yml
+
+run_net_spearman_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_2_GS_net_spearman.yml
+
+run_cc_spearman_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_3_GS_cc_spearman.yml
+
+run_cc_net_spearman_test:
+	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file TEST_4_GS_cc_net_spearman.yml
+>>>>>>> Signature_Analysis_Pipeline/master
 
 # ----------------------------------------------------------------
 # - VERIFICATION TESTS RUN SECTION                               -
@@ -92,6 +154,7 @@ verification_tests:
 	python3 ./integration/verify_benchmarks.py
 
 # ----------------------------------------------------------------
+<<<<<<< HEAD
 # - UNIT TESTS RUN SECTION                                       -
 # ----------------------------------------------------------------
 unit_test_setup:
@@ -104,6 +167,8 @@ run_benchmark_test:
 	python3 $(SCRIPT) -run_directory $(RUN_DIR) -run_file BENCHMARK_1_hclustering.yml
 
 # ----------------------------------------------------------------
+=======
+>>>>>>> Signature_Analysis_Pipeline/master
 # - CLEAN UP SECTION                                             -
 # ----------------------------------------------------------------	
 unit_test_cleanup:

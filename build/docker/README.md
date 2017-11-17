@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Building The General Clustering Pipeline Docker Image
 
 The Dockefile in this directory contains all the commands, in order, needed to build the **General Clustering Pipeline** docker image.
 
 * Run the "make" command to build the **General Clustering Pipeline** docker image (output: docker image called "general_clustering_pipeline" and a tag with today's date and time):
+=======
+# Building The Samples Clustering Pipeline Docker Image
+
+The Dockefile in this directory contains all the commands, in order, needed to build the **Samples Clustering Pipeline** docker image.
+
+* Run the "make" command to build the **Samples Clustering Pipeline** docker image (output: docker image called "samples_clustering_pipeline" and a tag with today's date and time):
+>>>>>>> Signature_Analysis_Pipeline/master
 ```
     make build_docker_image
 ```
@@ -23,7 +31,11 @@ The Dockefile in this directory contains all the commands, in order, needed to b
 
 ### 1. Run the following command with the specified docker image:
 ```
+<<<<<<< HEAD
 docker run -v `pwd`:/home/test/run_dir/ -it knowengdev/general_clustering_pipeline:07_26_2017
+=======
+docker run -v `pwd`:/home/test/run_dir/ -it knowengdev/samples_clustering_pipeline:03_15_2017
+>>>>>>> Signature_Analysis_Pipeline/master
 ```
 
 ### 2. Change directory to the "test" directory
@@ -36,7 +48,13 @@ cd test
 make env_setup
 ```
 
+<<<<<<< HEAD
 ### 4. Run the General Clustering Pipeline
 ```
 make run_hclust
+=======
+### 4. Run the Samples Clustering Pipeline
+```
+make run_cc_net_nmf
+>>>>>>> Signature_Analysis_Pipeline/master
 ```

@@ -1,13 +1,25 @@
+<<<<<<< HEAD
 FROM knowengdev/base_image:09_19_2017
 MAINTAINER Nahil Sobh <sobh@illinois.edu>
+=======
+FROM knowengdev/base_image:09_19_2017 
+MAINTAINER Dan Lanier <lanier4@illinois.edu>
+>>>>>>> Signature_Analysis_Pipeline/master
 
 ENV SRC_LOC /home
 
 # Install the latest knpackage
+<<<<<<< HEAD
 RUN pip3 install -I knpackage
 
 # Clone from github
 RUN git clone https://github.com/KnowEnG/General_Clustering_Pipeline.git ${SRC_LOC} 
+=======
+RUN pip3 install -I knpackage dispy 
+
+# Clone from github
+RUN git clone https://github.com/KnowEnG/Signature_Analysis_Pipeline.git ${SRC_LOC} 
+>>>>>>> Signature_Analysis_Pipeline/master
 
 # Set up working directory
 WORKDIR ${SRC_LOC}
